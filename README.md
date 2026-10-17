@@ -1,5 +1,4 @@
-# Image Capture and Video ProcessinINDHUJA.K
-# Register no : 212225040133
+# Image Capture and Video Process
 ---
 
 ## Aim
