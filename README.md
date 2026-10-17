@@ -109,17 +109,16 @@ cap.release()
 
 
 ### ii) Display the video
-Live webcam video is displayed
+
 <img width="435" height="418" alt="image" src="https://github.com/user-attachments/assets/c87ba365-654b-4290-aeff-556d5784a923" />
 
 
 ### iii) Display the video by resizing the window
-Video is shown in resized resolution (640 × 480)
 <img width="142" height="432" alt="image" src="https://github.com/user-attachments/assets/7ef39057-e734-4c61-9b2f-f624acb6e6ef" />
 
 
 ### iv) Rotate and display the video
-Video is displayed after rotation (90° clockwise)
+
 <img width="308" height="297" alt="image" src="https://github.com/user-attachments/assets/d007acc7-3967-4da7-88bc-736edcbef4d7" />
 
 
