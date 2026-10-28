@@ -39,88 +39,108 @@ Resize the frame and rotate it using OpenCV functions, then display the processe
 
 ---
 
-## 💻 Program
+## 💻 Program And Output
 
 ### Developed By:
 **Name: INDHUJA.K** 
 
 ### Register No: 21225040133
 
-```
-import cv2
-import matplotlib.pyplot as plt
-from IPython.display import clear_output
-import time
-cap = cv2.VideoCapture(0)
-ret, frame = cap.read()
-if ret:
-    cv2.imwrite("captured_frame.jpg", frame)
-cap.release()
-captured_image = cv2.imread('captured_frame.jpg')
-plt.imshow(captured_image[:,:,::-1])
-plt.title('Captured Frame')
-plt.axis('off')
-plt.show()
-```
-
-```
-cap = cv2.VideoCapture(0)
-
-for i in range(50):
-    ret, frame = cap.read()
-    if not ret:
-        break
-    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    clear_output(wait=True)
-    plt.imshow(frame_rgb)
-    plt.axis('off')
-    plt.show()
-    time.sleep(0.05)
-
-cap.release()
-```
-
-```
-cap = cv2.VideoCapture(0)
-
-for i in range(50):
-    ret, frame = cap.read()
-    if not ret:
-        break
-    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    clear_output(wait=True)
-    plt.imshow(frame_rgb)
-    plt.axis('off')
-    plt.show()
-    time.sleep(0.05)
-
-cap.release()
-```
-
-
----
-
-## Output
 
 ### i) Write the frame as JPG image
+```
+import cv2
 
-<img width="360" height="457" alt="image" src="https://github.com/user-attachments/assets/d7f8942a-4fb9-4973-9b27-f56ba6c720d5" />
+cap = cv2.VideoCapture(0)
 
+ret, frame = cap.read()
+
+if ret:
+    cv2.imwrite("pyramit.jpeg", frame)
+    cv2.imshow("Captured Image", frame)
+    cv2.waitKey(0)
+
+cap.release()
+cv2.destroyAllWindows()
+```
+<img width="787" height="627" alt="Screenshot 2026-10-28 094713" src="https://github.com/user-attachments/assets/b9ae66cf-b0d5-47c5-94cc-9811b3c89de3" />
 
 
 ### ii) Display the video
 
-<img width="435" height="418" alt="image" src="https://github.com/user-attachments/assets/c87ba365-654b-4290-aeff-556d5784a923" />
+```
+import cv2
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+
+    if not ret:
+        break
+
+    cv2.imshow("Live Video", frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+<img width="800" height="636" alt="image" src="https://github.com/user-attachments/assets/be245195-f07b-4e7a-bd2f-03ab1735cc26" />
 
 
 ### iii) Display the video by resizing the window
-<img width="142" height="432" alt="image" src="https://github.com/user-attachments/assets/7ef39057-e734-4c61-9b2f-f624acb6e6ef" />
+```
+import cv2
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+
+    if not ret:
+        break
+
+    resized = cv2.resize(frame, (320, 240))
+
+    cv2.imshow("Resized Video", resized)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+
+<img width="395" height="332" alt="image" src="https://github.com/user-attachments/assets/5440c694-21b0-4e3d-b8e2-3eb13a90a385" />
 
 
 ### iv) Rotate and display the video
+```
+import cv2
 
-<img width="308" height="297" alt="image" src="https://github.com/user-attachments/assets/d007acc7-3967-4da7-88bc-736edcbef4d7" />
+cap = cv2.VideoCapture(0)
 
+while True:
+    ret, frame = cap.read()
+
+    if not ret:
+        break
+
+    rotated = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+
+    cv2.imshow("Rotated Video", rotated)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+
+
+<img width="588" height="827" alt="image" src="https://github.com/user-attachments/assets/091daced-4992-4c96-a233-5491acf29083" />
 
 ---
 
